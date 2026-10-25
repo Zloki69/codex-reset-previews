@@ -6,6 +6,7 @@ import { extractEvents } from "./events";
 import { renderText } from "./notifications";
 import { runMonitor } from "./monitor";
 import type { XPost } from "./types";
+import { selectNotificationEvents } from "./notification-policy";
 
 if (existsSync(".env")) process.loadEnvFile(".env");
 const dryRun = process.argv.includes("--dry-run");
@@ -24,9 +25,10 @@ if (errors.length) {
   if (!path) throw new Error("--input requires a JSON file path");
   const posts = JSON.parse(await readFile(path, "utf8")) as XPost[];
   for (const post of posts) {
-    const events = extractEvents(post, config.sourceTimezone).filter(
+    const detected = extractEvents(post, config.sourceTimezone).filter(
       (e) => config.includeMentions || e.type !== "mention",
     );
+    const events = selectNotificationEvents(post, detected, config, new Date());
     if (events.length)
       console.log(renderText(post, events, config.timezone) + "\n");
   }

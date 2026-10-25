@@ -1,12 +1,12 @@
 import { createHash, createHmac } from "node:crypto";
 import { appendFile } from "node:fs/promises";
-import type { AppConfig, PendingNotification, XPost } from "./types";
+import type { AppConfig, PendingNotification, XPost, NotificationReceipt } from "./types";
 import { formatTime, type ResetEvent } from "./events";
 
 export type NotificationTarget = {
   id: string;
   channel: string;
-  send: (item: PendingNotification) => Promise<void>;
+  send: (item: PendingNotification) => Promise<void | NotificationReceipt>;
 };
 const digest = (value: string) =>
   createHash("sha256").update(value).digest("hex");
@@ -98,6 +98,30 @@ export function createTargets(
     if (!response.ok) throw new Error(`Notification HTTP ${response.status}`);
     return response;
   };
+  if (config.pushplusToken)
+    add("pushplus", config.pushplusToken, async (item) => {
+      const response = await request("https://www.pushplus.plus/send", {
+        token: config.pushplusToken,
+        title: item.test ? "Codex 预告推送 · 连接测试" :
+          config.notificationMode === "previews" ? "Codex 重置预告 · Tibo" : "Codex 重置动态 · Tibo",
+        content: `${renderText(item.post, item.events, config.timezone)}\n\n预告不代表额度已到账；时间以原帖为准。`,
+        channel: "wechat",
+        template: "txt",
+        ...(config.pushplusCallbackUrl ? { callbackUrl: config.pushplusCallbackUrl } : {}),
+      });
+      let result: { code?: number; data?: unknown };
+      try { result = await response.json(); }
+      catch { throw new Error("Invalid PushPlus JSON response"); }
+      if (result.code !== 200)
+        throw new Error(`PushPlus rejected notification (code ${typeof result.code === "number" ? result.code : "unknown"})`);
+      const data = result.data;
+      const receipt = typeof data === "string" ? data :
+        Array.isArray(data) ? data.find((entry) => entry?.channel === "wechat" && entry?.code === 200)?.shortCode :
+        data && typeof data === "object" && "shortCode" in data ? data.shortCode : undefined;
+      if (typeof receipt !== "string" || !/^[A-Za-z0-9_-]{1,128}$/.test(receipt))
+        throw new Error("PushPlus did not return a WeChat acceptance receipt");
+      return { status: "accepted", id: receipt };
+    });
   if (config.githubSummaryPath)
     add("github-actions", "job-summary", async (item) => {
       const quoted = renderText(item.post, item.events, config.timezone)

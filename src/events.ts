@@ -37,6 +37,13 @@ function classifyResetAssertion(clause: string): ResetAssertion {
   return "mention";
 }
 
+/** Require an explicit future commitment, including bank-credit announcements. */
+export function isExplicitResetPreview(event: ResetEvent): boolean {
+  return (event.type === "reset" || event.type === "bank_credit") &&
+    (event.status === "scheduled" || event.status === "announced") &&
+    classifyResetAssertion(event.evidence) === "committed";
+}
+
 const unknown = (evidence: string, note: string): EventTime => ({
   kind: "unknown",
   start: null,

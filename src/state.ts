@@ -46,6 +46,8 @@ function migrateMatch(match: Record<string, unknown>): MatchRecord {
     channels: Array.isArray(match.channels)
       ? match.channels.filter((value): value is string => typeof value === "string")
       : [],
+    notificationReceipts: match.notificationReceipts && typeof match.notificationReceipts === "object"
+      ? match.notificationReceipts as MatchRecord["notificationReceipts"] : undefined,
   };
 }
 

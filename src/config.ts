@@ -33,6 +33,10 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env): AppConfig {
     webhookDebug: toBoolean(env.WEBHOOK_DEBUG),
     githubSummaryPath: env.GITHUB_STEP_SUMMARY?.trim() || undefined,
     includeMentions: toBoolean(env.INCLUDE_MENTIONS, true),
+    notificationMode: (env.NOTIFY_MODE?.trim() || "all") as AppConfig["notificationMode"],
+    notificationMaxAgeHours: Number(env.NOTIFICATION_MAX_AGE_HOURS || 24),
+    pushplusToken: env.PUSHPLUS_TOKEN?.trim() || undefined,
+    pushplusCallbackUrl: env.PUSHPLUS_CALLBACK_URL?.trim() || undefined,
     xBearerToken: env.X_BEARER_TOKEN?.trim() ?? "",
     username,
     keyword: env.MATCH_WORD?.trim() || "reset",
@@ -55,6 +59,22 @@ export function validateConfig(
   options: { offline?: boolean } = {},
 ): string[] {
   const errors: string[] = [];
+
+  if (!["all", "previews"].includes(config.notificationMode))
+    errors.push("NOTIFY_MODE must be all or previews.");
+  if (!Number.isFinite(config.notificationMaxAgeHours) || config.notificationMaxAgeHours <= 0)
+    errors.push("NOTIFICATION_MAX_AGE_HOURS must be a positive number.");
+  if (config.notificationMode === "previews" && config.keyword.toLowerCase() !== "reset")
+    errors.push("NOTIFY_MODE=previews requires MATCH_WORD=reset.");
+  if (config.pushplusCallbackUrl) {
+    try {
+      const callback = new URL(config.pushplusCallbackUrl);
+      if (callback.protocol !== "https:" || callback.username || callback.password)
+        throw new Error();
+    } catch {
+      errors.push("PUSHPLUS_CALLBACK_URL must be an HTTPS URL without user credentials.");
+    }
+  }
 
   if (!options.offline && config.sourceProvider === "x" && !config.xBearerToken)
     errors.push("X_BEARER_TOKEN is required when SOURCE_PROVIDER=x.");
@@ -116,6 +136,7 @@ export function validateConfig(
   if (
     !options.offline &&
     !config.githubSummaryPath &&
+    !config.pushplusToken &&
     !config.emailTo.length &&
     !config.smsTo.length &&
     !config.telegramChatIds.length &&
@@ -123,7 +144,7 @@ export function validateConfig(
     !config.webhookUrls.length
   ) {
     errors.push(
-      "Configure at least one notification channel (GitHub Actions summary, email, SMS, Telegram, Discord, or webhook).",
+      "Configure at least one notification channel (PushPlus, GitHub Actions summary, email, SMS, Telegram, Discord, or webhook).",
     );
   }
 

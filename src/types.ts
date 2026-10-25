@@ -28,9 +28,18 @@ export type MatchRecord = {
   events: ResetEvent[];
   notifiedAt?: string;
   channels: string[];
+  notificationReceipts?: Record<string, NotificationReceipt>;
+};
+
+/** Provider acceptance is distinct from delivery to the user's phone. */
+export type NotificationReceipt = {
+  status: "accepted";
+  id: string;
 };
 
 export type PendingNotification = {
+  /** Only the explicit connection-test command sets this flag. */
+  test?: boolean;
   key: string;
   post: XPost;
   events: ResetEvent[];
@@ -44,6 +53,7 @@ export type MonitorState = {
   outbox?: PendingNotification[];
   seen?: Record<string, string>;
   latestObservedPost?: XPost | null;
+  previewNotificationKeys?: string[];
   username: string;
   keyword: string;
   userId: string | null;
@@ -106,6 +116,10 @@ export type AppConfig = {
   webhookDebug: boolean;
   githubSummaryPath?: string;
   includeMentions: boolean;
+  notificationMode: "all" | "previews";
+  notificationMaxAgeHours: number;
+  pushplusToken?: string;
+  pushplusCallbackUrl?: string;
   xBearerToken: string;
   username: string;
   keyword: string;

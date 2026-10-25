@@ -1,5 +1,7 @@
 # Codex Reset Signal
 
+> Local adaptation: explicit reset previews → PushPlus WeChat. See [setup and delivery limits](docs/pushplus-previews.md). Upstream monitoring and notification channels are preserved.
+
 **English** | [简体中文](README.zh-CN.md)
 
 [![CI](https://github.com/AllenXiao95/codex-reset-signal/actions/workflows/ci.yml/badge.svg)](https://github.com/AllenXiao95/codex-reset-signal/actions/workflows/ci.yml)

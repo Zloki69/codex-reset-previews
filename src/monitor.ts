@@ -7,6 +7,7 @@ import { containsKeyword } from "./matcher";
 import { createTargets, type NotificationTarget } from "./notifications";
 import { readState, writeState } from "./state";
 import { createPostSource, type PostSource } from "./post-source";
+import { selectNotificationEvents } from "./notification-policy";
 import {
   buildPublicStatus,
   writePublicFeed,
@@ -181,17 +182,23 @@ async function runLocked(config: AppConfig, deps: Dependencies): Promise<Monitor
         }
         // Bootstrap still detects recent signals for the dashboard, but historical
         // notifications remain opt-in to prevent a noisy first deployment.
+        const notificationEvents = selectNotificationEvents(post, events, config, now());
+        const notificationKey = config.notificationMode === "previews" ? `preview:${identity}` : version;
         if (
+          notificationEvents.length &&
           (!bootstrap || config.bootstrapNotify) &&
-          !state.outbox.some((item) => item.key === version)
+          !state.outbox.some((item) => item.key === notificationKey) &&
+          !(config.notificationMode === "previews" && state.previewNotificationKeys?.includes(notificationKey))
         ) {
           state.outbox.push({
-            key: version,
+            key: notificationKey,
             post,
-            events,
+            events: notificationEvents,
             targets: targets.map((target) => target.id),
             delivered: [],
           });
+          if (config.notificationMode === "previews")
+            state.previewNotificationKeys = [...(state.previewNotificationKeys ?? []), notificationKey].slice(-2000);
         }
       }
     }
@@ -209,6 +216,18 @@ async function runLocked(config: AppConfig, deps: Dependencies): Promise<Monitor
   }
 
   for (const item of [...state.outbox]) {
+    // Apply a changed policy to an old queue as well; never resend expired previews.
+    const allowedEvents = selectNotificationEvents(item.post, item.events, config, now()).filter((event) =>
+      config.notificationMode !== "previews" || !state.matches.some((match) =>
+        Date.parse(match.createdAt ?? "") > Date.parse(item.post.createdAt ?? "") &&
+        match.events.some((later) => later.type === event.type && later.status === "completed"),
+      ),
+    );
+    if (!allowedEvents.length) {
+      state.outbox = state.outbox.filter((pending) => pending.key !== item.key);
+      await persist(config, state, now);
+      continue;
+    }
     for (const targetId of item.targets) {
       if (item.delivered.includes(targetId)) continue;
       const target = targets.find((candidate) => candidate.id === targetId);
@@ -218,14 +237,16 @@ async function runLocked(config: AppConfig, deps: Dependencies): Promise<Monitor
         );
         continue;
       }
+      const match = state.matches.find((candidate) => candidate.version === postVersion(item.post));
       try {
-        await target.send(item);
+        const receipt = await target.send({ ...item, events: allowedEvents });
+        if (receipt && match)
+          match.notificationReceipts = { ...match.notificationReceipts, [targetId]: receipt };
       } catch {
         errors.push(`${target.channel} delivery failed; will retry on next run`);
         continue;
       }
       item.delivered.push(targetId);
-      const match = state.matches.find((candidate) => candidate.version === item.key);
       if (match) {
         match.channels = item.delivered
           .map((id) => targets.find((candidate) => candidate.id === id)?.channel)
