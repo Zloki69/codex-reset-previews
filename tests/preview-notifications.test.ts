@@ -103,4 +103,13 @@ describe("preview delivery integration", () => {
     await runMonitor(config, { source, targets: [{ id: "phone", channel: "pushplus", send }], now: () => now });
     expect(send).not.toHaveBeenCalled();
   });
+  it("bounds PushPlus retries so a configuration failure cannot drain the daily quota", async () => {
+    const { config, source } = await setup();
+    source.getPosts.mockResolvedValue({ posts: [post("We will reset Codex in three hours.")], newestId: "2" });
+    const send = vi.fn().mockRejectedValue(new Error("configuration rejected"));
+    const deps = { source, targets: [{ id: "phone", channel: "pushplus", send }], now: () => now };
+    for (let i = 0; i < 3; i++) await expect(runMonitor(config, deps)).rejects.toThrow("will retry");
+    await expect(runMonitor(config, deps)).rejects.toThrow("retry limit");
+    expect(send).toHaveBeenCalledTimes(3);
+  });
 });

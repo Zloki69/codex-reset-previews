@@ -25,7 +25,7 @@ GitHub Actions 每约 5 分钟运行上游监控程序，经免费 FxEmbed 接�
 
 PushPlus 通过 HTTPS 调用，使用 txt 模板并检查业务 code 与微信消息流水号。成功只记为 `accepted`，流水号保留在原 MatchRecord 的 `notificationReceipts`，不声称手机已读或已到达。PushPlus 的 200 响应只是异步受理。若已有 HTTPS 结果接收服务，可配置 Secret `PUSHPLUS_CALLBACK_URL`，适配器会传给 PushPlus；本方案不另建回调服务器，未配置时以 PushPlus 后台及手机实收核验最终状态。
 
-PushPlus 业务拒绝保留待发项，下轮重试。上游队列存在“供应商受理成功但状态保存失败”时重复的窗口，不能保证严格 exactly-once。HTTP 超时后实际结果也可能不确定。
+PushPlus 业务拒绝保留待发项，下轮重试，每个预告目标最多尝试 3 次，避免错误配置耗尽额度。上游队列存在“供应商受理成功但状态保存失败”时重复的窗口，不能保证严格 exactly-once。HTTP 超时后实际结果也可能不确定。
 
 沿用上游单帖解析：仅在回复中写“By midnight”而未出现 reset、需跨帖关联才知所指的内容可能漏报。第三方时间线也可能遗漏／延迟；不以轮询成功证明 X 内容完整。
 

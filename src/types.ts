@@ -45,6 +45,7 @@ export type PendingNotification = {
   events: ResetEvent[];
   targets: string[];
   delivered: string[];
+  attempts?: Record<string, number>;
 };
 
 export type MonitorState = {

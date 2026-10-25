@@ -115,6 +115,9 @@ export function createTargets(
       if (result.code !== 200)
         throw new Error(`PushPlus rejected notification (code ${typeof result.code === "number" ? result.code : "unknown"})`);
       const data = result.data;
+      if (data && typeof data === "object" && !Array.isArray(data) &&
+          "code" in data && data.code !== 200)
+        throw new Error("PushPlus rejected WeChat notification");
       const receipt = typeof data === "string" ? data :
         Array.isArray(data) ? data.find((entry) => entry?.channel === "wechat" && entry?.code === 200)?.shortCode :
         data && typeof data === "object" && "shortCode" in data ? data.shortCode : undefined;

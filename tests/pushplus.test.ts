@@ -26,6 +26,7 @@ describe("PushPlus WeChat transport", () => {
   it.each([
     { code: 905, msg: "private-token must not be logged" },
     { code: 200, data: [{ code: 500, channel: "wechat", shortCode: "bad" }] },
+    { code: 200, data: { code: 500, shortCode: "bad" } },
     { code: 200, data: null },
   ])("rejects HTTP-200 business failures or missing receipts", async (body) => {
     const fetcher = vi.fn().mockResolvedValue(Response.json(body));

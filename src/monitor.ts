@@ -237,6 +237,16 @@ async function runLocked(config: AppConfig, deps: Dependencies): Promise<Monitor
         );
         continue;
       }
+      // Bad credentials must not exhaust PushPlus's daily request quota forever.
+      if (target.channel === "pushplus") {
+        const attempts = item.attempts?.[targetId] ?? 0;
+        if (attempts >= 3) {
+          errors.push("pushplus retry limit reached; inspect the receipt/configuration before retrying");
+          continue;
+        }
+        item.attempts = { ...item.attempts, [targetId]: attempts + 1 };
+        await persist(config, state, now);
+      }
       const match = state.matches.find((candidate) => candidate.version === postVersion(item.post));
       try {
         const receipt = await target.send({ ...item, events: allowedEvents });
