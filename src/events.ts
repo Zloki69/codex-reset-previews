@@ -24,6 +24,10 @@ const completedAssertion =
   /\b(?:have|has|just|already)\s+(?:been\s+)?reset\b|\blimits?\s+(?:are|is|were|was)\s+(?:now\s+)?(?:fully\s+)?reset\b|\ball\s+(?:usage\s+)?reset\b|\breset(?:s|ting)?\b[^.!?]{0,80}\b(?:complete(?:d)?|done|finished|propagated|applied|landed)\b/i;
 const committedAssertion =
   /\b(?:will|going\s+to|plan(?:ned|ning)?\s+to)\b[^.!?]{0,120}\breset(?:s|ting)?\b|\b(?:scheduled|expected)\b[^.!?]{0,40}\breset(?:s|ting)?\b|\breset(?:s|ting)?\b[^.!?]{0,120}\b(?:will|lands?|landing|scheduled|expected|propagating|rolling\s+out)\b|\bresetting\b|\breset(?:s|ting)?\b\s+(?:in|within|at|around|by|today|tonight|tomorrow)\b/i;
+// A calendar declaration announces the day's reset even without "will reset".
+// Keep negations/questions in uncertainAssertion and completed language above it.
+const calendarResetAnnouncement =
+  /\b(?:today|tomorrow|tonight)\s+(?:is|will\s+be)\s+(?:(?:a|the|another)\s+)?(?:(?:full|global|usage|codex)\s+)*reset\b|\b(?:it\s+is|it's)\s+(?:(?:a|the|another)\s+)?reset\s+day\s+(?:today|tomorrow|tonight)\b/i;
 
 /**
  * Classify only whether a reset statement is asserted and its lifecycle state.
@@ -34,6 +38,7 @@ function classifyResetAssertion(clause: string): ResetAssertion {
   // Future/commitment language wins over result words, e.g. "will be propagated".
   if (committedAssertion.test(clause)) return "committed";
   if (completedAssertion.test(clause)) return "completed";
+  if (calendarResetAnnouncement.test(clause)) return "committed";
   return "mention";
 }
 
@@ -155,13 +160,14 @@ export function parseEventTime(
       ? FixedOffsetZone.instance(c.get("timezoneOffset")!)
       : sourceZone!;
   const convert = (component: chrono.ParsedComponents) => {
+    const hasClockTime = component.isCertain("hour");
     const parts = {
       year: component.get("year")!,
       month: component.get("month")!,
       day: component.get("day")!,
-      hour: component.isCertain("hour") ? component.get("hour")! : 0,
-      minute: component.get("minute") ?? 0,
-      second: component.get("second") ?? 0,
+      hour: hasClockTime ? component.get("hour")! : 0,
+      minute: hasClockTime ? component.get("minute") ?? 0 : 0,
+      second: hasClockTime ? component.get("second") ?? 0 : 0,
     };
     const date = DateTime.fromObject(parts, { zone });
     if (

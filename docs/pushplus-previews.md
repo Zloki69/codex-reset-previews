@@ -8,6 +8,8 @@ GitHub Actions 每约 5 分钟运行上游监控程序，经免费 FxEmbed 接�
 
 本适配的默认 workflow 设置为 `NOTIFY_MODE=previews`、`INCLUDE_MENTIONS=false`、`BOOTSTRAP_NOTIFY=false`，首次只建立基线，不补发历史通知。类型为 reset 或 bank_credit 且有明确未来承诺的帖子才有资格通知；排除完成、弱暗示、请求及否定。原帖只通知一次；内容编辑不会重复通知。
 
+明确安排也包括“Today is a reset / It's reset day today”这类日程公告，无需出现 will。2026-10-26 的 Day 21 原帖已保存为回归样例，按实际采集时刻回放验证入队、受理与去重；修复不回退线上游标，不补发这条旧预告。日期型时间窗从原文时区的零点起算，不继承发帖分钟和秒。
+
 已过预告时刻、超过 24 小时才发现、缺发帖时间或已知存在后续同类完成公告的预告会跳过；失败队列投递前再次检查。调整 `NOTIFICATION_MAX_AGE_HOURS` 可改变新鲜度窗口。
 
 ## 云端接通
@@ -20,6 +22,8 @@ GitHub Actions 每约 5 分钟运行上游监控程序，经免费 FxEmbed 接�
 6. 确认实收后将 `MONITOR_ENABLED=true`，启用后续预告定时检查。停用时设为 false。
 
 无需部署上游仪表盘，也不需要接入 Cloudflare。GitHub schedule 可能延迟，不能保证严格五分钟到账；需要更稳定的时钟时可复用上游 Cloudflare scheduler，但执行端仍为 Actions。
+
+2026-10-26 日志中观察到约两小时的原生 schedule 间隔；这不是每五分钟实际运行的验收结果。该日 Day 21 漏报本身由分类造成：原帖 13:21:22 发布，13:22:06 已被采集，旧解析却将其当普通提及过滤，没有发送请求。调度问题需另外接入外部时钟解决，不能靠放宽分类规则解决。
 
 ## 投递结果与限制
 
