@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-26T05:22:06.801Z",
+  "updatedAt": "2026-10-26T08:05:14.032Z",
   "username": "thsottiaux",
   "keyword": "reset",
   "monitor": {
     "provider": "fxembed",
-    "lastCheckedAt": "2026-10-26T05:22:06.797Z",
-    "lastSuccessAt": "2026-10-26T05:22:06.797Z",
-    "lastRunStatus": "checked-1-posts"
+    "lastCheckedAt": "2026-10-26T08:05:14.028Z",
+    "lastSuccessAt": "2026-10-26T08:05:14.028Z",
+    "lastRunStatus": "checked-5-posts"
   },
   "latestObservedPost": {
-    "id": "2114588174249071102",
-    "text": "Day 21/ Wonder what happens the remaining seven days. But today is a reset.",
-    "url": "https://x.com/thsottiaux/status/2114588174249071102",
-    "postCreatedAt": "2026-10-26T05:21:22.000Z"
+    "id": "2114599388454481930",
+    "text": "@larsencc @bot Not enough resets",
+    "url": "https://x.com/thsottiaux/status/2114599388454481930",
+    "postCreatedAt": "2026-10-26T06:05:56.000Z"
   },
   "latest": {
     "reset": null,
