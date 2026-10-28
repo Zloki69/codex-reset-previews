@@ -1,22 +1,47 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-28T00:05:37.532Z",
+  "updatedAt": "2026-10-28T05:29:12.277Z",
   "username": "thsottiaux",
   "keyword": "reset",
   "monitor": {
     "provider": "fxembed",
-    "lastCheckedAt": "2026-10-28T00:05:37.529Z",
-    "lastSuccessAt": "2026-10-28T00:05:37.529Z",
-    "lastRunStatus": "checked-0-posts"
+    "lastCheckedAt": "2026-10-28T05:29:11.063Z",
+    "lastSuccessAt": "2026-10-28T05:29:11.063Z",
+    "lastRunStatus": "checked-8-posts"
   },
   "latestObservedPost": {
-    "id": "2115148258372964831",
-    "text": "@BrenBuilds A sign of great things to come",
-    "url": "https://x.com/thsottiaux/status/2115148258372964831",
-    "postCreatedAt": "2026-10-27T18:26:57.000Z"
+    "id": "2115299029294920189",
+    "text": "@mark_k @OpenAI Taking notes",
+    "url": "https://x.com/thsottiaux/status/2115299029294920189",
+    "postCreatedAt": "2026-10-28T04:26:03.000Z"
   },
   "latest": {
-    "reset": null,
+    "reset": {
+      "version": "81aa0416a461f3aedd751e42cca996b60e3af36c5e8c7e391f5ef7d01ce6ef61",
+      "id": "2115273064481218829",
+      "text": "Day 23/ Much requested iCloud Main &amp; Calendar plugins. Just kidding, today is a reset. Still much requested though!",
+      "url": "https://x.com/thsottiaux/status/2115273064481218829",
+      "postCreatedAt": "2026-10-28T02:42:53.000Z",
+      "detectedAt": "2026-10-28T05:29:11.062Z",
+      "events": [
+        {
+          "type": "reset",
+          "status": "scheduled",
+          "evidence": "Just kidding, today is a reset",
+          "time": {
+            "kind": "date",
+            "start": "2026-10-27T07:00:00.000Z",
+            "end": "2026-10-28T07:00:00.000Z",
+            "evidence": "today",
+            "note": "按配置假设原文时区为 America/Los_Angeles"
+          }
+        }
+      ],
+      "deliveryChannels": [
+        "pushplus"
+      ],
+      "origin": "live"
+    },
     "bankCredit": {
       "version": "history:2096035437299237298",
       "id": "2096035437299237298",
@@ -44,6 +69,32 @@
     "bankExpiry": null
   },
   "recent": [
+    {
+      "version": "81aa0416a461f3aedd751e42cca996b60e3af36c5e8c7e391f5ef7d01ce6ef61",
+      "id": "2115273064481218829",
+      "text": "Day 23/ Much requested iCloud Main &amp; Calendar plugins. Just kidding, today is a reset. Still much requested though!",
+      "url": "https://x.com/thsottiaux/status/2115273064481218829",
+      "postCreatedAt": "2026-10-28T02:42:53.000Z",
+      "detectedAt": "2026-10-28T05:29:11.062Z",
+      "events": [
+        {
+          "type": "reset",
+          "status": "scheduled",
+          "evidence": "Just kidding, today is a reset",
+          "time": {
+            "kind": "date",
+            "start": "2026-10-27T07:00:00.000Z",
+            "end": "2026-10-28T07:00:00.000Z",
+            "evidence": "today",
+            "note": "按配置假设原文时区为 America/Los_Angeles"
+          }
+        }
+      ],
+      "deliveryChannels": [
+        "pushplus"
+      ],
+      "origin": "live"
+    },
     {
       "version": "history:2096035437299237298",
       "id": "2096035437299237298",
