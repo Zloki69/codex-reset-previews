@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-30T23:44:40.081Z",
+  "updatedAt": "2026-10-31T02:44:52.844Z",
   "username": "thsottiaux",
   "keyword": "reset",
   "monitor": {
     "provider": "fxembed",
-    "lastCheckedAt": "2026-10-30T23:44:40.077Z",
-    "lastSuccessAt": "2026-10-30T23:44:40.077Z",
-    "lastRunStatus": "checked-0-posts"
+    "lastCheckedAt": "2026-10-31T02:44:52.840Z",
+    "lastSuccessAt": "2026-10-31T02:44:52.840Z",
+    "lastRunStatus": "checked-1-posts"
   },
   "latestObservedPost": {
-    "id": "2116256600436641887",
-    "text": "@claudeai Better announce 28 days of reset",
-    "url": "https://x.com/thsottiaux/status/2116256600436641887",
-    "postCreatedAt": "2026-10-30T19:51:06.000Z"
+    "id": "2116346061317140873",
+    "text": "@charliermarsh No way",
+    "url": "https://x.com/thsottiaux/status/2116346061317140873",
+    "postCreatedAt": "2026-10-31T01:46:35.000Z"
   },
   "latest": {
     "reset": {
