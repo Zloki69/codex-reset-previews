@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-04T07:36:22.902Z",
+  "updatedAt": "2026-11-04T15:43:52.049Z",
   "username": "thsottiaux",
   "keyword": "reset",
   "monitor": {
     "provider": "fxembed",
-    "lastCheckedAt": "2026-11-04T07:36:22.899Z",
-    "lastSuccessAt": "2026-11-04T07:36:22.899Z",
-    "lastRunStatus": "checked-2-posts"
+    "lastCheckedAt": "2026-11-04T15:43:52.046Z",
+    "lastSuccessAt": "2026-11-04T15:43:52.046Z",
+    "lastRunStatus": "checked-5-posts"
   },
   "latestObservedPost": {
-    "id": "2117868812657971442",
-    "text": "@hiarun02 It’s 50X",
-    "url": "https://x.com/thsottiaux/status/2117868812657971442",
-    "postCreatedAt": "2026-11-04T06:37:27.000Z"
+    "id": "2117889346426823037",
+    "text": "@haydenfield Asked chat and it confirmed the story",
+    "url": "https://x.com/thsottiaux/status/2117889346426823037",
+    "postCreatedAt": "2026-11-04T07:59:03.000Z"
   },
   "latest": {
     "reset": {
