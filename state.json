@@ -3,11 +3,11 @@
   "username": "thsottiaux",
   "keyword": "reset",
   "userId": "1953337039510003712",
-  "sinceId": "2117746467058405665",
-  "lastCheckedAt": "2026-11-04T01:23:10.667Z",
-  "lastSuccessAt": "2026-11-04T01:23:10.667Z",
-  "lastRunStatus": "checked-1-posts",
-  "postsScanned": 85,
+  "sinceId": "2117868812657971442",
+  "lastCheckedAt": "2026-11-04T07:36:22.899Z",
+  "lastSuccessAt": "2026-11-04T07:36:22.899Z",
+  "lastRunStatus": "checked-2-posts",
+  "postsScanned": 87,
   "matches": [
     {
       "version": "81aa0416a461f3aedd751e42cca996b60e3af36c5e8c7e391f5ef7d01ce6ef61",
@@ -130,14 +130,16 @@
     "2117489367417803042": "c443f9c8baf5a52ac7550077cd1b0783b115da40115d316b61fb3343ea2064fe",
     "2117506709417795626": "197322de1438cca2db3708bed1e771c6c7fbe624d4a08f9dfd724c5bd20e4ca8",
     "2117515752588853710": "514fcef91054a256c44dfe6c6db5f8f26aa617c598e45c0b394d7a4117bad746",
-    "2117746467058405665": "668b7b66861cfbbbf7cbf6379e9aac08ec20414acb64b5522a31eb87aeaaac1b"
+    "2117746467058405665": "668b7b66861cfbbbf7cbf6379e9aac08ec20414acb64b5522a31eb87aeaaac1b",
+    "2117865198040355067": "850688f13c29b31240a9b18ad10cd2715361fec2abbb060666e32ee6846ea1bd",
+    "2117868812657971442": "4eada8916287fa2159488662d148c9d73913a1329faec061706f3f599f81db2e"
   },
   "latestObservedPost": {
-    "id": "2117746467058405665",
-    "canonicalId": "2117746467058405665",
-    "text": "Things will change again and again and again. We’re still very early and agents today are incredible, and yet so frustrating still. Can’t wait to crack things to get that flow state back. Long journey ahead.",
-    "createdAt": "2026-11-03T22:31:18.000Z",
-    "url": "https://x.com/thsottiaux/status/2117746467058405665",
+    "id": "2117868812657971442",
+    "canonicalId": "2117868812657971442",
+    "text": "@hiarun02 It’s 50X",
+    "createdAt": "2026-11-04T06:37:27.000Z",
+    "url": "https://x.com/thsottiaux/status/2117868812657971442",
     "media": []
   },
   "eventParserVersion": 6,
