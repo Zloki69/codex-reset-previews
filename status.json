@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-05T16:43:22.348Z",
+  "updatedAt": "2026-11-05T22:19:01.059Z",
   "username": "thsottiaux",
   "keyword": "reset",
   "monitor": {
     "provider": "fxembed",
-    "lastCheckedAt": "2026-11-05T16:43:22.345Z",
-    "lastSuccessAt": "2026-11-05T16:43:22.345Z",
-    "lastRunStatus": "checked-1-posts"
+    "lastCheckedAt": "2026-11-05T22:19:01.053Z",
+    "lastSuccessAt": "2026-11-05T22:19:01.053Z",
+    "lastRunStatus": "checked-4-posts"
   },
   "latestObservedPost": {
-    "id": "2118376946652557613",
-    "text": "@ohayou792 Who comes up with these haha. Dane Starbuck. Haha",
-    "url": "https://x.com/thsottiaux/status/2118376946652557613",
-    "postCreatedAt": "2026-11-05T16:16:36.000Z"
+    "id": "2118444105969926407",
+    "text": "Come push the frontier of fluffiness",
+    "url": "https://x.com/thsottiaux/status/2118444105969926407",
+    "postCreatedAt": "2026-11-05T20:43:28.000Z"
   },
   "latest": {
     "reset": {
