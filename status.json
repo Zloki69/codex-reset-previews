@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-06T02:33:51.927Z",
+  "updatedAt": "2026-11-06T09:47:18.240Z",
   "username": "thsottiaux",
   "keyword": "reset",
   "monitor": {
     "provider": "fxembed",
-    "lastCheckedAt": "2026-11-06T02:33:51.923Z",
-    "lastSuccessAt": "2026-11-06T02:33:51.923Z",
-    "lastRunStatus": "checked-4-posts"
+    "lastCheckedAt": "2026-11-06T09:47:18.235Z",
+    "lastSuccessAt": "2026-11-06T09:47:18.235Z",
+    "lastRunStatus": "checked-7-posts"
   },
   "latestObservedPost": {
-    "id": "2118473288368406582",
-    "text": "Generating*",
-    "url": "https://x.com/thsottiaux/status/2118473288368406582",
-    "postCreatedAt": "2026-11-05T22:39:25.000Z"
+    "id": "2118574897542922697",
+    "text": "@ThePrimeagen My loop caught this. It's the future",
+    "url": "https://x.com/thsottiaux/status/2118574897542922697",
+    "postCreatedAt": "2026-11-06T05:23:11.000Z"
   },
   "latest": {
     "reset": {
