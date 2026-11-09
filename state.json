@@ -3,11 +3,11 @@
   "username": "thsottiaux",
   "keyword": "reset",
   "userId": "1953337039510003712",
-  "sinceId": "2119532403593191733",
-  "lastCheckedAt": "2026-11-08T22:48:26.326Z",
-  "lastSuccessAt": "2026-11-08T22:48:26.326Z",
-  "lastRunStatus": "checked-2-posts",
-  "postsScanned": 163,
+  "sinceId": "2119611877810639072",
+  "lastCheckedAt": "2026-11-09T02:03:57.504Z",
+  "lastSuccessAt": "2026-11-09T02:03:57.504Z",
+  "lastRunStatus": "checked-1-posts",
+  "postsScanned": 164,
   "matches": [
     {
       "version": "81aa0416a461f3aedd751e42cca996b60e3af36c5e8c7e391f5ef7d01ce6ef61",
@@ -208,14 +208,15 @@
     "2119308687676432672": "968ea4e2d85d2fccdde068e8c8c332ee6bf0c9be3748cd7bfc83a6b8dbfa8074",
     "2119309070658318698": "d8ef0e6c6eda079386f56be8a18afac7363e384c3abf8487114b0085b83e3073",
     "2119528988033073501": "ef7eb84d4cd1349aaf337ab58efa0b215b5caddca923e33f792f541bc420b7cd",
-    "2119532403593191733": "8f6d3dfd8382d776462fd8fcefcf16fbeb244ae3d2cabe5e2a25643302da87f0"
+    "2119532403593191733": "8f6d3dfd8382d776462fd8fcefcf16fbeb244ae3d2cabe5e2a25643302da87f0",
+    "2119611877810639072": "9a693cf09967be78d16422b13de22b648726dbdebc10c4bb56e9780db1efd7d7"
   },
   "latestObservedPost": {
-    "id": "2119532403593191733",
-    "canonicalId": "2119532403593191733",
-    "text": "@garrytan Thanks for running those and publishing",
-    "createdAt": "2026-11-08T20:47:58.000Z",
-    "url": "https://x.com/thsottiaux/status/2119532403593191733",
+    "id": "2119611877810639072",
+    "canonicalId": "2119611877810639072",
+    "text": "@maria_rcks Congrats to Theo",
+    "createdAt": "2026-11-09T02:03:46.000Z",
+    "url": "https://x.com/thsottiaux/status/2119611877810639072",
     "media": []
   },
   "eventParserVersion": 6,
