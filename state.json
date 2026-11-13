@@ -3,11 +3,11 @@
   "username": "thsottiaux",
   "keyword": "reset",
   "userId": "1953337039510003712",
-  "sinceId": "2120621485442339277",
-  "lastCheckedAt": "2026-11-12T20:24:14.058Z",
-  "lastSuccessAt": "2026-11-12T20:24:14.058Z",
-  "lastRunStatus": "checked-0-posts",
-  "postsScanned": 174,
+  "sinceId": "2121036562058400200",
+  "lastCheckedAt": "2026-11-13T01:15:36.648Z",
+  "lastSuccessAt": "2026-11-13T01:15:36.648Z",
+  "lastRunStatus": "checked-2-posts",
+  "postsScanned": 176,
   "matches": [
     {
       "version": "81aa0416a461f3aedd751e42cca996b60e3af36c5e8c7e391f5ef7d01ce6ef61",
@@ -219,14 +219,16 @@
     "2120410006273380750": "a6fabd09590cac47be5bd963153253f6474ae46827adab01a0182a0b02185c1d",
     "2120410480204525936": "c579a4bdbfd63ee59b12e3cbf573c888c235cf951566a35314f55135a2a37573",
     "2120411235716063700": "69f6e3d9a8d3672a81c799c6cbee42f728362b829eff79d039988558abaca0b0",
-    "2120621485442339277": "c799859d296bbf3849c12f5141a98225ae70b286615e30ddf2b4a4bcdf292f0f"
+    "2120621485442339277": "c799859d296bbf3849c12f5141a98225ae70b286615e30ddf2b4a4bcdf292f0f",
+    "2120999993079451919": "2732b43e8f7002afa5ee3d3720a66a3370014efcbf52871d64eb02dd4dffeafb",
+    "2121036562058400200": "ec245e36cc102b2232cc4a4ac0027bad560c07ac48d455c1d0ef3e194a1fa84e"
   },
   "latestObservedPost": {
-    "id": "2120621485442339277",
-    "canonicalId": "2120621485442339277",
-    "text": "@charlierguo Hi 👋 Buzz Buzz",
-    "createdAt": "2026-11-11T20:55:36.000Z",
-    "url": "https://x.com/thsottiaux/status/2120621485442339277",
+    "id": "2121036562058400200",
+    "canonicalId": "2121036562058400200",
+    "text": "We announced new tools we're developing for cybersecurity today across automated patching and automated red teaming. Watch the recording here https://t.co/fW371aFjB5",
+    "createdAt": "2026-11-13T00:24:58.000Z",
+    "url": "https://x.com/thsottiaux/status/2121036562058400200",
     "media": []
   },
   "eventParserVersion": 6,

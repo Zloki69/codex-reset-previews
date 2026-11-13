@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-12T20:24:14.063Z",
+  "updatedAt": "2026-11-13T01:15:36.651Z",
   "username": "thsottiaux",
   "keyword": "reset",
   "monitor": {
     "provider": "fxembed",
-    "lastCheckedAt": "2026-11-12T20:24:14.058Z",
-    "lastSuccessAt": "2026-11-12T20:24:14.058Z",
-    "lastRunStatus": "checked-0-posts"
+    "lastCheckedAt": "2026-11-13T01:15:36.648Z",
+    "lastSuccessAt": "2026-11-13T01:15:36.648Z",
+    "lastRunStatus": "checked-2-posts"
   },
   "latestObservedPost": {
-    "id": "2120621485442339277",
-    "text": "@charlierguo Hi 👋 Buzz Buzz",
-    "url": "https://x.com/thsottiaux/status/2120621485442339277",
-    "postCreatedAt": "2026-11-11T20:55:36.000Z"
+    "id": "2121036562058400200",
+    "text": "We announced new tools we're developing for cybersecurity today across automated patching and automated red teaming. Watch the recording here https://t.co/fW371aFjB5",
+    "url": "https://x.com/thsottiaux/status/2121036562058400200",
+    "postCreatedAt": "2026-11-13T00:24:58.000Z"
   },
   "latest": {
     "reset": {
