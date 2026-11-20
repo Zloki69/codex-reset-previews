@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-19T22:55:32.686Z",
+  "updatedAt": "2026-11-20T03:48:26.161Z",
   "username": "thsottiaux",
   "keyword": "reset",
   "monitor": {
     "provider": "fxembed",
-    "lastCheckedAt": "2026-11-19T22:55:32.683Z",
-    "lastSuccessAt": "2026-11-19T22:55:32.683Z",
+    "lastCheckedAt": "2026-11-20T03:48:26.157Z",
+    "lastSuccessAt": "2026-11-20T03:48:26.157Z",
     "lastRunStatus": "checked-5-posts"
   },
   "latestObservedPost": {
-    "id": "2123527849403674729",
-    "text": "@theo I still count 6 weeks in the year",
-    "url": "https://x.com/thsottiaux/status/2123527849403674729",
-    "postCreatedAt": "2026-11-19T21:24:27.000Z"
+    "id": "2123621880636883137",
+    "text": "@zedsolar123 @AdamHoltererer Mr. Stark, I don't feel so good",
+    "url": "https://x.com/thsottiaux/status/2123621880636883137",
+    "postCreatedAt": "2026-11-20T03:38:05.000Z"
   },
   "latest": {
     "reset": {
