@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-20T03:48:26.161Z",
+  "updatedAt": "2026-11-20T12:14:42.433Z",
   "username": "thsottiaux",
   "keyword": "reset",
   "monitor": {
     "provider": "fxembed",
-    "lastCheckedAt": "2026-11-20T03:48:26.157Z",
-    "lastSuccessAt": "2026-11-20T03:48:26.157Z",
-    "lastRunStatus": "checked-5-posts"
+    "lastCheckedAt": "2026-11-20T12:14:42.426Z",
+    "lastSuccessAt": "2026-11-20T12:14:42.426Z",
+    "lastRunStatus": "checked-3-posts"
   },
   "latestObservedPost": {
-    "id": "2123621880636883137",
-    "text": "@zedsolar123 @AdamHoltererer Mr. Stark, I don't feel so good",
-    "url": "https://x.com/thsottiaux/status/2123621880636883137",
-    "postCreatedAt": "2026-11-20T03:38:05.000Z"
+    "id": "2123693044465906132",
+    "text": "@tszzl @thibaudz @Roon 🫨",
+    "url": "https://x.com/thsottiaux/status/2123693044465906132",
+    "postCreatedAt": "2026-11-20T08:20:52.000Z"
   },
   "latest": {
     "reset": {
