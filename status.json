@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-24T06:19:09.612Z",
+  "updatedAt": "2026-11-24T17:56:09.161Z",
   "username": "thsottiaux",
   "keyword": "reset",
   "monitor": {
     "provider": "fxembed",
-    "lastCheckedAt": "2026-11-24T06:19:09.606Z",
-    "lastSuccessAt": "2026-11-24T06:19:09.606Z",
+    "lastCheckedAt": "2026-11-24T17:56:09.158Z",
+    "lastSuccessAt": "2026-11-24T17:56:09.158Z",
     "lastRunStatus": "checked-2-posts"
   },
   "latestObservedPost": {
-    "id": "2125027477877887231",
-    "text": "Worth listening to if you're curious what goes on in the minds of the people at OpenAI who are obsessively trying to patch all the flaws in OSS software and infrastructure we all rely on",
-    "url": "https://x.com/thsottiaux/status/2125027477877887231",
-    "postCreatedAt": "2026-11-24T00:43:26.000Z"
+    "id": "2125284868414394550",
+    "text": "Hi. We’re beginning to roll out the combined Chat and Work experience to a small group of Pro users to learn from feedback before we roll out more broadly. \n\nLet us know what you think and where we can improve!",
+    "url": "https://x.com/thsottiaux/status/2125284868414394550",
+    "postCreatedAt": "2026-11-24T17:46:13.000Z"
   },
   "latest": {
     "reset": {
