@@ -4,15 +4,14 @@
   "keyword": "reset",
   "userId": "1953337039510003712",
   "sinceId": "2125853628250599730",
-  "lastCheckedAt": "2026-11-26T11:31:49.075Z",
-  "lastSuccessAt": "2026-11-26T11:31:49.075Z",
-  "lastRunStatus": "checked-2-posts",
+  "lastCheckedAt": "2026-11-26T20:28:09.880Z",
+  "lastSuccessAt": "2026-11-26T20:28:09.880Z",
+  "lastRunStatus": "checked-0-posts",
   "postsScanned": 251,
   "matches": [
     {
       "version": "835ed93f0e9c918ba28d31e16f39e798c0f7c3238ee5db00edc64fc7486984c5",
       "id": "2125784147889393806",
-      "canonicalId": "2125784147889393806",
       "text": "We made a billing mistake at launch of GPT-6.2 that incorrectly discounted GPT-6.2 Astra and Sol usage for most users. \n\nWe’ve fixed this now, so the same work will use more of your plan’s usage allowance. Comparing to last week, you will reach your limits 40% faster on GPT-6.2 Astra and 25% faster on Sol. You should still see these go further in usage compared to 6 Astra and 6.1 Sol. Other models weren’t affected, and we won’t charge you for the difference on past usage.\n\nAs a small token to apologize for the mistake, we’ll be adding one banked reset for everyone on Go, Plus, Pro, and Business.",
       "createdAt": "2026-11-26T02:50:10.000Z",
       "url": "https://x.com/thsottiaux/status/2125784147889393806",
